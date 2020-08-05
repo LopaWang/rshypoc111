@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingPrefix">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/headIv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="会议"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/state"
+            app:layout_constraintTop_toTopOf="@id/state" />
+
+        <TextView
+            android:id="@+id/conferenceNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_m_head"
+            tools:text="张三"
+            android:maxLength="12"
+            android:ellipsize="end"
+            android:drawablePadding="5dp"
+            android:textSize="12sp"
+            android:textColor="@color/c_999999"
+            app:layout_constraintBottom_toBottomOf="@id/headIv"
+            app:layout_constraintLeft_toLeftOf="@id/state"
+            />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/c_d1350c"
+            android:drawableLeft="@drawable/ic_m_time"
+            app:layout_constraintBottom_toBottomOf="@id/headIv"
+            app:layout_constraintLeft_toRightOf="@id/conferenceNumber"
+            android:text="11:20-15:30"/>
+        <TextView
+            android:id="@+id/state"
+            android:paddingTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="进行中"
+            android:textColor="@color/textFF5722"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/headIv"
+            app:layout_constraintTop_toTopOf="@id/headIv" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@id/state"
+            app:layout_constraintTop_toTopOf="@id/state" />
+
+        <TextView
+            android:id="@+id/join"
+            android:layout_width="60dp"
+            android:layout_height="32dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:text="加入"
+            android:textColor="@color/textFF5722"
+            app:bl_corners_radius="30dp"
+            app:bl_stroke_color="@color/textFF5722"
+            app:bl_stroke_width="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

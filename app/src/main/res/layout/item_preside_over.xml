@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="15dp">
+
+    <com.ly.rshypoc.view.TextImg
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ti_img="@mipmap/default_avatar"
+        app:ti_imgHeight="46dp"
+        app:ti_imgWith="46dp"
+        app:ti_margin="20dp"
+        app:ti_orientation="left"
+        app:ti_text="韩老板" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/more"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_audio_select"
+       />
+
+
+</LinearLayout>

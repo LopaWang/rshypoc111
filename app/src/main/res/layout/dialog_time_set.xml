@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#f3f3f3"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingEnd="20dp"
+            android:text="取消"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/BLACK_A060"
+            android:paddingStart="20dp"/>
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:paddingEnd="20dp"
+            android:text="确定"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/BLACK_A060"
+            android:paddingStart="20dp"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="180dp">
+        <com.ly.rshypoc.picker.ScrollPickerView
+            android:id="@+id/view_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <com.ly.rshypoc.picker.ScrollPickerView
+            android:id="@+id/view_min"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

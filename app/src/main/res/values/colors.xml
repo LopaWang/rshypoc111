@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#393939</color>
+    <color name="colorPrimaryDark">#393939</color>
+    <color name="colorAccent">#21B1DA</color>
+
+    <color name="textFF5722">#FF5722</color>
+    <color name="textD1350C">#D1350C</color>
+    <color name="text94EC2D">#94EC2D</color>
+    <color name="text00D0FB">#00D0FB</color>
+    <color name="text00A3F5">#00A3F5</color>
+    <color name="text65EC7B">#65EC7B</color>
+    <color name="text179A26">#179A26</color>
+    <color name="text666666">#666666</color>
+    <color name="text3DA449">#3DA449</color>
+
+    <color name="titlebar_background">#D1350C</color>
+    <bool name="default_circle_indicator_centered">true</bool>
+    <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>
+    <color name="default_circle_indicator_page_color">#00000000</color>
+    <integer name="default_circle_indicator_orientation">0</integer>
+    <dimen name="default_circle_indicator_radius">3dp</dimen>
+    <bool name="default_circle_indicator_snap">false</bool>
+    <color name="default_circle_indicator_stroke_color">#FFDDDDDD</color>
+    <dimen name="default_circle_indicator_stroke_width">1dp</dimen>
+
+    <color name="outgoing_call_bg">#c4c4c4</color>
+    <color name="ainemo_white">#FFFFFFFF</color>
+    <color name="nemo_cursor_color">#52a5eb</color>
+    <color name="nemo_black_70">#B3000000</color>
+    <color name="nemo_black_40">#66000000</color>
+    <color name="black_80_percent">#CC000000</color>
+    <color name="xylink_gray_light">#dddddd</color>
+    <color name="xylink_main_clicked">#3da3e6</color>
+    <color name="xylink_main_blue">#ff44b5ff</color>
+    <color name="xylink_top_bottom_color">#CC000000</color>
+    <color name="white_25">#40FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <color name="black_20">#33000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="white_90">#e6ffffff</color>
+    <color name="black">#000000</color>
+    <color name="nemo_green">#90b12b</color>
+    <color name="nemo_red">#d2391a</color>
+    <color name="no_video_bg">#CCCCCC</color>
+    <color name="video_bg">#e8000000</color>
+
+    <!--call color-->
+    <color name="call_line_color_white_30">#4DFFFFFF</color>
+    <color name="fecc_bg">#ff3c36</color>
+    <color name="dtmf_press_color">#26FFFFFF</color>
+    <color name="call_onhold_title_color">#393946</color>
+    <color name="text_color_90393946">#E6393946</color>
+    <color name="text_color_60393946">#99393946</color>
+    <color name="text_color_80393946">#CC393946</color>
+    <color name="text_color_loading">#80393946</color>
+    <color name="contact_text_color">#44b5ff</color>
+
+    <color name="color_light_actionbar_primary">#FFFFFF</color>
+    <color name="color_light_actionbar_primaryDark">#9E9E9E</color>
+    <color name="color_light_actionbar_statusBar">#9E9E9E</color>
+    <color name="color_light_actionbar_accent">#44B5FF</color>
+    <color name="color_light_actionbar_textColorPrimary">#666666</color>
+    <color name="color_light_actionbar_controlNormal">#44B5FF</color>
+    <color name="color_light_actionbar_buttonNormal">#666666</color>
+    <color name="color_light_actionbar_windowBackground">#FFFFFF</color>
+    <color name="color_light_actionbar_navigationBar">#FFFFFF</color>
+
+    <color name="call_font_color">#8CFFFFFF</color>
+    <color name="ainemo_white_90">#E6FFFFFF</color>
+
+    <color name="ainemo_white_95">#F2FFFFFF</color>
+
+    <color name="white_board_bg">#ebebeb</color>
+    <color name="black_70_percent">#A1000000</color>
+
+    <color name="nemo_black_80">#CC000000</color>
+    <color name="nemo_black_60">#99000000</color>
+    <color name="nemo_black_50">#80000000</color>
+    <color name="nemo_black_20">#33000000</color>
+    <color name="nemo_black_30">#4d000000</color>
+    <color name="nemo_black_15">#23000000</color>
+    <color name="c_f5f5f5">#F5F5F5</color>
+    <color name="c_444444">#444444</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_d1350c">#d1350c</color>
+
+    <color name="blink_color">#b1b1b1</color>
+    <color name="shimmer_color">#a2878787</color>
+    <color name="divider">#999999</color>
+    <color name="white">#ffffff</color>
+    <color name="bgEA">#EAEAEA</color>
+    <color name="text88">#888888</color>
+    <color name="textC5">#C5C5C5</color>
+    <color name="line">#F1F1F1</color>
+    <color name="bg">#F8F8F8</color>
+    <color name="btn00BCD4">#00BCD4</color>
+
+    <color name="toast">#302D2D</color>
+</resources>

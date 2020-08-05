@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layoutLL"
+    tools:ignore="MissingPrefix">
+
+    <include layout="@layout/include_title" />
+
+    <View style="@style/line10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="参会者"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/allMute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="全体静音"
+            android:textColor="@color/white"
+            android:layout_marginRight="11dp"
+            app:bl_corners_radius="20dp"
+            app:bl_solid_color="@color/textD1350C" />
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="更多"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            app:bl_corners_radius="20dp"
+            app:bl_solid_color="@color/textD1350C" />
+    </LinearLayout>
+
+    <View style="@style/line10" />
+
+    <com.ly.rshypoc.view.CommonTabLayout
+        android:id="@+id/tabMode"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:tl_indicator_color="@color/textFF5722"
+        app:tl_indicator_corner_radius="1dp"
+        app:tl_indicator_height="2dp"
+        app:tl_indicator_width="40dp"
+        app:tl_tab_padding="10dp"
+        app:tl_tab_space_equal="false"
+        app:tl_tab_width="80dp"
+        app:tl_textSelectColor="@color/textFF5722"
+        app:tl_textUnSelectSize="14dp"
+        app:tl_textUnselectColor="@color/black"
+        app:tl_textsize="14sp" />
+
+    <View style="@style/line" />
+
+    <com.ly.rshypoc.view.XRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>
