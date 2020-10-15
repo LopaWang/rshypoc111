@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layoutLL">
+
+    <include layout="@layout/include_title" />
+
+    <View style="@style/line10" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <View style="@style/Vline" />
+
+                <TextView
+                    style="@style/Vtitle"
+                    android:layout_marginLeft="10dp"
+                    android:text="议会主题" />
+            </LinearLayout>
+
+            <View style="@style/line" />
+
+            <EditText
+                android:id="@+id/meeting_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="议会主题"
+                android:padding="15dp"
+                android:singleLine="true" />
+
+            <View style="@style/line10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <View style="@style/Vline" />
+
+                <TextView
+                    style="@style/Vtitle"
+                    android:layout_marginLeft="10dp"
+                    android:text="时间安排" />
+            </LinearLayout>
+
+            <View style="@style/line" />
+
+            <LinearLayout
+                android:id="@+id/startLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:text="开始时间" />
+
+                <com.ly.rshypoc.view.TextImg
+                    android:id="@+id/startTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:padding="15dp"
+                    app:ti_img="@drawable/right"
+                    app:ti_imgHeight="15dp"
+                    app:ti_imgWith="15dp"
+                    app:ti_margin="5dp"
+                    app:ti_orientation="right"
+                    app:ti_text="现在" />
+            </LinearLayout>
+
+
+            <View style="@style/line" />
+
+            <LinearLayout
+                android:id="@+id/longLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:padding="15dp"
+                    android:text="时长" />
+
+                <com.ly.rshypoc.view.TextImg
+                    android:id="@+id/longTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:padding="15dp"
+                    app:ti_img="@drawable/right"
+                    app:ti_imgHeight="15dp"
+                    app:ti_imgWith="15dp"
+                    app:ti_margin="5dp"
+                    app:ti_orientation="right"
+                    app:ti_text="1小时" />
+            </LinearLayout>
+
+            <View style="@style/line" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:padding="15dp"
+                    android:text="日历提醒" />
+
+
+                <com.ly.rshypoc.view.SwitchButton
+                    android:id="@+id/calendarSb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="23dp"
+                    app:sb_checked="true"
+                    app:sb_checked_color="@color/textFF5722"
+                    app:sb_show_indicator="false" />
+            </LinearLayout>
+
+            <View style="@style/line10" android:visibility="gone" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:text="会议室号" />
+
+                <com.ly.rshypoc.view.TextImg
+                    android:id="@+id/meeting_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:padding="15dp"
+                    app:ti_img="@drawable/right"
+                    app:ti_imgHeight="15dp"
+                    app:ti_imgWith="15dp"
+                    app:ti_margin="5dp"
+                    app:ti_orientation="right"
+                    app:ti_text="" />
+            </LinearLayout>
+
+            <View style="@style/line" android:visibility="gone"/>
+
+            <LinearLayout
+
+                android:visibility="gone"
+                android:id="@+id/joinLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:text="参会人数" />
+
+                <com.ly.rshypoc.view.TextImg
+                    android:id="@+id/join_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:padding="15dp"
+                    app:ti_img="@drawable/right"
+                    app:ti_imgHeight="15dp"
+                    app:ti_imgWith="15dp"
+                    app:ti_margin="5dp"
+                    app:ti_orientation="right"
+                    app:ti_text="共1人" />
+            </LinearLayout>
+
+            <View style="@style/line" android:visibility="gone" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:text="预设主会场（可选）" />
+
+
+                <EditText
+                    android:id="@+id/terminal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="end|center_vertical"
+                    android:hint="请输入主会场终端号"
+                    android:paddingRight="23dp"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View style="@style/line10" android:visibility="gone"/>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:text="会议开始时自动呼叫参会终端" />
+
+
+                <com.ly.rshypoc.view.SwitchButton
+                    android:id="@+id/terminalSb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="23dp"
+                    app:sb_checked="true"
+                    app:sb_checked_color="@color/textFF5722"
+                    app:sb_show_indicator="false" />
+            </LinearLayout>
+
+            <View style="@style/line10" />
+
+            <TextView
+                android:id="@+id/create"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="创建会议"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:bl_corners_radius="30dp"
+                app:bl_solid_color="@color/textFF5722"
+                tools:ignore="MissingPrefix" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layoutLL">
+
+    <include layout="@layout/include_title" />
+
+    <View style="@style/line10" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xx直播"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="时间："
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="地点："
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="@id/time"
+            app:layout_constraintTop_toBottomOf="@id/time" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View style="@style/line10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <View style="@style/Vline" />
+
+        <TextView
+            style="@style/Vtitle"
+            android:layout_marginLeft="10dp"
+            android:text="详情" />
+    </LinearLayout>
+
+    <View style="@style/line" />
+
+    <EditText
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="start"
+        android:hint="详情描述"
+        android:minHeight="150dp"
+        android:padding="15dp"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/line" />
+
+    <TextView
+        android:id="@+id/begin"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="开始直播"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:bl_corners_radius="30dp"
+        app:bl_solid_color="@color/textFF5722"
+        tools:ignore="MissingPrefix" />
+</LinearLayout>

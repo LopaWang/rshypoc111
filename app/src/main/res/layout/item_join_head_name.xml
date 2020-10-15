@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="5dp">
+
+    <com.ly.rshypoc.view.TextImg
+        android:id="@+id/head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="3dp"
+        android:paddingTop="3dp"
+        android:paddingRight="6dp"
+        android:paddingBottom="3dp"
+        app:bl_corners_radius="20dp"
+        app:bl_stroke_color="@color/line"
+        app:bl_stroke_width="1dp"
+        app:ti_circle="true"
+        app:ti_img="@mipmap/default_avatar"
+        app:ti_imgHeight="20dp"
+        app:ti_imgWith="20dp"
+        app:ti_margin="10dp"
+        app:ti_orientation="left"
+        app:ti_text="兰因"
+        app:ti_textSize="13sp" />
+</LinearLayout>

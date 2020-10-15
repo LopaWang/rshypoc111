@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:minHeight="200dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/emPic"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/empty_icon" />
+
+    <TextView
+        android:id="@+id/tv_page_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="～暂无数据，敬请期待～"
+        android:textColor="@color/textC5"
+        android:textSize="15sp" />
+
+</LinearLayout>

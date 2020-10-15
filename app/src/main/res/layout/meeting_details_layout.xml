@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/layoutLL"
+    tools:ignore="MissingPrefix"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/include_title" />
+
+    <View style="@style/line10" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/titleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会议名字"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.ly.rshypoc.view.TextImg
+            android:id="@+id/head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/titleName"
+            app:layout_constraintTop_toBottomOf="@id/titleName"
+            app:ti_circle="true"
+            app:ti_img="@mipmap/default_avatar"
+            app:ti_imgHeight="20dp"
+            app:ti_imgWith="20dp"
+            app:ti_margin="10dp"
+            app:ti_orientation="left"
+            app:ti_text="兰因" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="会议发起人"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/head"
+            app:layout_constraintLeft_toRightOf="@id/head"
+            app:layout_constraintTop_toTopOf="@id/head" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View style="@style/line" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="时间：2020/3/12 22:20 -2020/03/12 23:00"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:drawableStart="@drawable/ic_share_meeting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会议号：10105105"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/numberPassword"
+            app:layout_constraintLeft_toLeftOf="@id/number" />
+
+        <TextView
+            android:id="@+id/numberPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会议密码：*******"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/number" />
+    </android.support.constraint.ConstraintLayout>
+
+    <View style="@style/line10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <View style="@style/Vline" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/Vtitle"
+            android:layout_marginLeft="10dp"
+            android:text="参与人员" />
+    </LinearLayout>
+
+    <View style="@style/line" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/invite"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="邀请参会者"
+            android:textColor="@color/white"
+            app:bl_corners_radius="30dp"
+            app:bl_gradient_endColor="@color/text179A26"
+
+            app:bl_gradient_startColor="@color/text65EC7B" />
+
+        <TextView
+            android:id="@+id/preside_over"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="主持"
+            android:textColor="@color/white"
+            app:bl_corners_radius="30dp"
+            app:bl_gradient_endColor="@color/text00A3F5"
+            app:bl_gradient_startColor="@color/text00D0FB" />
+
+        <TextView
+            android:id="@+id/initiation"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="入会"
+            android:textColor="@color/white"
+            app:bl_corners_radius="30dp"
+            app:bl_gradient_endColor="@color/textD1350C"
+            app:bl_gradient_startColor="@color/textFF5722" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/layoutLL">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bg_home"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_title2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
+
+                <com.ly.rshypoc.view.TextImg
+                    android:id="@+id/create_meeting"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:ti_img="@mipmap/meeting_icon"
+                    app:ti_imgHeight="46dp"
+                    app:ti_imgWith="46dp"
+                    app:ti_margin="10dp"
+                    app:ti_textSize="14sp"
+                    app:ti_textColor="@color/white"
+                    app:ti_text="创建会议" />
+
+                <com.ly.rshypoc.view.TextImg
+                    android:id="@+id/on_line"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:ti_img="@mipmap/on_line_icon"
+                    app:ti_textSize="14sp"
+                    app:ti_textColor="@color/white"
+                    app:ti_imgHeight="46dp"
+                    app:ti_imgWith="46dp"
+                    app:ti_margin="10dp"
+                    app:ti_text="直播" />
+
+                <com.ly.rshypoc.view.TextImg
+                    android:id="@+id/playback"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:ti_img="@mipmap/playback_icon"
+                    app:ti_textSize="14sp"
+                    app:ti_textColor="@color/white"
+                    app:ti_imgHeight="46dp"
+                    app:ti_imgWith="46dp"
+                    app:ti_margin="10dp"
+                    app:ti_text="会议回放" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <com.ly.rshypoc.view.CommonTabLayout
+        android:id="@+id/tabMode"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:tl_indicator_color="@color/textFF5722"
+        app:tl_indicator_corner_radius="1dp"
+        app:tl_indicator_height="2dp"
+        app:tl_indicator_width="40dp"
+        app:tl_tab_padding="10dp"
+        app:tl_tab_space_equal="false"
+        app:tl_tab_width="80dp"
+        app:tl_textSelectColor="@color/textFF5722"
+        app:tl_textUnSelectSize="14dp"
+        app:tl_textUnselectColor="@color/black"
+        app:tl_textsize="14sp" />
+
+    <View style="@style/line" />
+
+    <com.ly.rshypoc.view.XRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
