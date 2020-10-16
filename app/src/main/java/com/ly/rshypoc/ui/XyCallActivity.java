@@ -963,6 +963,8 @@ public class XyCallActivity extends AppCompatActivity implements View.OnClickLis
         initCallDuration();
         showToolbar(sDefaultTimeout);
 
+
+        videoPagerAdapter.setLocalVideoInfo(buildLocalLayoutInfo());
         //刚进入默认静音和关闭摄像头状态true代表关闭
         if (getIntent().getBooleanExtra("muteVideo", true)) {
             isVideoMute = true;
@@ -1821,6 +1823,7 @@ public class XyCallActivity extends AppCompatActivity implements View.OnClickLis
                 @Override
                 public void accept(Integer integer) throws Exception {
 //                    mVideoView.onWhiteBoardMessages(message);
+                    videoPagerAdapter.onWhiteboardMessage(message);
                 }
             });
         }
@@ -1838,6 +1841,7 @@ public class XyCallActivity extends AppCompatActivity implements View.OnClickLis
                         NemoSDK.getInstance().setOrientation(Orientation.LANDSCAPE);
                     }
 //                    mVideoView.handleWhiteboardLinesMessage(messages);
+                    videoPagerAdapter.onWhiteboardMessages(messages);
                 }
             });
         }
@@ -1872,27 +1876,33 @@ public class XyCallActivity extends AppCompatActivity implements View.OnClickLis
     };
 
     private void handleOrientationChanged(int rotation) {
-        if (rotation > 350 || rotation < 10) {
+        int screenOrientation = getResources().getConfiguration().orientation;
+        if (((rotation >= 0) && (rotation < 45)) || (rotation > 315)) {
             // 竖屏 0度：手机默认竖屏状态（home键在正下方）
             // NOTE: 白板状态默认支持横屏 竖屏会拉伸变形,  画廊模式也默认横屏(口, 品, 田)
-            if (!SpeakerVideoGroup.isShowingWhiteboard()) {
-                if (layoutMode == LayoutMode.MODE_GALLERY) {
-                    return;
+            if (screenOrientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT && screenOrientation != ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT) {
+                if (!SpeakerVideoGroup.isShowingWhiteboard()) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                    videoPagerAdapter.setLandscape(false);
+                    NemoSDK.getInstance().setOrientation(Orientation.PORTRAIT);
                 }
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-//                mVideoView.setLandscape(false);
-                NemoSDK.getInstance().setOrientation(Orientation.PORTRAIT);
             }
-        } else if (rotation > 80 && rotation < 100) {
-            // 反向横屏 90度：手机顺时针旋转90度横屏（home建在左侧）
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
-//            mVideoView.setLandscape(true);
-            NemoSDK.getInstance().setOrientation(Orientation.REVERSE_LANDSCAPE);
-        } else if (rotation > 260 && rotation < 280) {
+        } else if (rotation > 225 && rotation < 315) {
             // 横屏 270度：手机顺时针旋转270度横屏，（home键在右侧）
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-//            mVideoView.setLandscape(true);
-            NemoSDK.getInstance().setOrientation(Orientation.LANDSCAPE);
+            if (screenOrientation != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                videoPagerAdapter.setLandscape(true);
+                NemoSDK.getInstance().setOrientation(Orientation.LANDSCAPE);
+            }
+        } else if (rotation > 45 && rotation < 135) {
+            // 反向横屏 90度：手机顺时针旋转90度横屏（home建在左侧）
+            if (screenOrientation != ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
+                videoPagerAdapter.setLandscape(true);
+                NemoSDK.getInstance().setOrientation(Orientation.REVERSE_LANDSCAPE);
+            }
+        } else if (rotation > 135 && rotation < 225) {
+
         }
     }
 

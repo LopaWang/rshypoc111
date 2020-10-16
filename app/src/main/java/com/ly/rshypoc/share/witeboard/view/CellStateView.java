@@ -543,7 +543,7 @@ public class CellStateView extends ViewGroup {
         smallDisplayName.setMaxWidth(width - gap * 2);
 
         if (isFullScreen) {
-            fullDisplayName.setVisibility(VISIBLE);
+            fullDisplayName.setVisibility(GONE);
             fullDisplayName.layout(fullgap, fullgap, fullDisplayName.getMeasuredWidth() + fullgap, fullDisplayName.getMeasuredHeight() + fullgap);
             smallDisplayName.setVisibility(GONE);
 
