@@ -33,7 +33,7 @@ public class SpeakerVideoGroup extends VideoCellGroup implements WhiteBoardTextu
     private static final int THUMBNAIL_W = 16;
     private static final int RATIO_HEIGHT = 9;
     private static final int RATIO_WIDTH = 16;
-    private static final int THUMBNAIL_CELL_NUM = 5;
+    private static final int THUMBNAIL_CELL_NUM = 6;
 
     /**
      * 锁定参会者ID
@@ -157,6 +157,7 @@ public class SpeakerVideoGroup extends VideoCellGroup implements WhiteBoardTextu
             lockedPid = pid;
             swapThumbnail2FullScreen(pid);
             postDelayed(mLayoutRunnabler, 200);
+            NemoSDK.getInstance().forceLayout(lockedPid);
         }
     }
 
@@ -203,17 +204,8 @@ public class SpeakerVideoGroup extends VideoCellGroup implements WhiteBoardTextu
             case 2:
                 layoutTwoCells(l, t, r, b);
                 break;
-            case 3:
-                layoutThreeCells(l, t, r, b);
-                break;
-            case 4:
-                layoutFourCells(l, t, r, b);
-                break;
-            case 5:
-            case 6:
-                layoutFiveCells(l, t, r, b);
-                break;
             default:
+                layoutMoreCells(l, t, r, b);
                 break;
         }
     }
@@ -284,7 +276,7 @@ public class SpeakerVideoGroup extends VideoCellGroup implements WhiteBoardTextu
             } else {
                 int cellWidth;
                 int cellHeight;
-                if(mRemoteVideoCells.get(1).getLayoutInfo() != null && mRemoteVideoCells.get(1).getLayoutInfo().getVideoWidth() > mRemoteVideoCells.get(1).getLayoutInfo().getVideoHeight()
+                if (mRemoteVideoCells.get(1).getLayoutInfo() != null && mRemoteVideoCells.get(1).getLayoutInfo().getVideoWidth() > mRemoteVideoCells.get(1).getLayoutInfo().getVideoHeight()
                         || mRemoteVideoCells.get(1).getLayoutInfo() != null && !layoutInfo.getRemoteID().contains(Enums.DEVICE_TYPE_SOFT)) {
                     cellWidth = ((b - t) - (THUMBNAIL_CELL_NUM + 1) * mCellPadding) / THUMBNAIL_CELL_NUM;
                     cellHeight = cellWidth * THUMBNAIL_H / THUMBNAIL_W;
@@ -488,6 +480,62 @@ public class SpeakerVideoGroup extends VideoCellGroup implements WhiteBoardTextu
         }
     }
 
+    private void layoutMoreCells(int l, int t, int r, int b) {
+        if (mRemoteVideoCells.size() >= 3) {
+            int cellWidth = (r - l) / 2;
+            int cellHeight = cellWidth * RATIO_HEIGHT / RATIO_WIDTH;
+
+            int left = 0, top = 0, right = 0, bottom = 0, size = mRemoteVideoCells.size() - 1;
+
+
+            top = ((b - t) - (2 * cellHeight + cellHeight * (size / 2 + size % 2))) / 2;
+
+            if (top < 0) {
+                cellHeight = (b - t) / (2 + (size / 2 + size % 2));
+                cellWidth = cellHeight * RATIO_WIDTH / RATIO_HEIGHT;
+                top = t;
+            }
+
+            left = ((r - l) - cellWidth * 2) / 2;
+            right = left + cellWidth * 2;
+            bottom = top + 2 * cellHeight;
+
+            mRemoteVideoCells.get(0).setLargeScreen(true);
+            mRemoteVideoCells.get(0).setFullScreen(false);
+            mRemoteVideoCells.get(0).setRectVisible(false);
+            mRemoteVideoCells.get(0).setVisibility(VISIBLE);
+            mRemoteVideoCells.get(0).layout(left, top, right, bottom);
+            L.i(TAG, "layoutMoreCells, left : " + left + ", top : " + top + ", right : " + right + ", bottom : " + bottom);
+
+            //获取新的大屏
+            mFullScreenVideoCell = mRemoteVideoCells.get(0);
+            if (onVideoCellListener != null) {
+                onVideoCellListener.onFullScreenChanged(mFullScreenVideoCell);
+            }
+
+            for (int i = 1; i < mRemoteVideoCells.size(); i++) {
+                if (i % 2 == 1) {
+                    left = ((r - l) - cellWidth * 2) / 2;
+                    top = bottom;
+                    right = left + cellWidth;
+                    bottom = top + cellHeight;
+                    mRemoteVideoCells.get(i).setLargeScreen(true);
+                    mRemoteVideoCells.get(i).setFullScreen(false);
+                    mRemoteVideoCells.get(i).setRectVisible(false);
+                    mRemoteVideoCells.get(i).setVisibility(VISIBLE);
+                    mRemoteVideoCells.get(i).layout(left, top, right, bottom);
+                } else {
+                    left = right;
+                    right = left + cellWidth;
+                    mRemoteVideoCells.get(i).setLargeScreen(true);
+                    mRemoteVideoCells.get(i).setFullScreen(false);
+                    mRemoteVideoCells.get(i).setRectVisible(false);
+                    mRemoteVideoCells.get(i).setVisibility(VISIBLE);
+                    mRemoteVideoCells.get(i).layout(left, top, right, bottom);
+                }
+            }
+        }
+    }
 
     private void layoutFullScreenVideoCell(int l, int t, int r, int b) {
         if (isShowingWhiteboard) {
@@ -693,7 +741,7 @@ public class SpeakerVideoGroup extends VideoCellGroup implements WhiteBoardTextu
         if (infos != null && infos.size() > 0) {
             mRemoteVideoInfos = infos;
 
-            L.i(TAG, "video info: " + infos.get(0).getVideoWidth() + " " + infos.get(0).getVideoHeight());
+            //L.i(TAG, "video info: " + infos.get(0).getVideoWidth() + " " + infos.get(0).getVideoHeight());
 
             //check the active speaker & content ID
             computeActiveAndContentPid(infos);
