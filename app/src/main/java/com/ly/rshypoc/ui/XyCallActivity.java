@@ -1189,6 +1189,7 @@ public class XyCallActivity extends AppCompatActivity implements View.OnClickLis
 
     private void updateMuteStatus(boolean isMute) {
         NemoSDK.getInstance().enableMic(isMute, true);
+        videoPagerAdapter.setLocalMicMute(isMute);
         if (isMute) {
             btMuteMic.setImageResource(R.mipmap.ic_toolbar_mic_muted);
             tvMuteMic.setText("取消静音");
