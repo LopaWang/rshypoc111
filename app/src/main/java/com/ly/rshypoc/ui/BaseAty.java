@@ -28,6 +28,7 @@ import com.noober.background.BackgroundLibrary;
  */
 public abstract class BaseAty extends AppCompatActivity {
 
+
     protected final String TAG = this.getClass().getSimpleName();
     protected Context context;
         protected ImmersionBar mImmersionBar;
